@@ -27,9 +27,10 @@ Used to **execute clicks based on a JSON configuration file**.
 # Run two different click configurations sequentially
 .\configRunner.ps1 -ConfigFile "FirstAction.json" -Loops 3
 .\configRunner.ps1 -ConfigFile "SecondAction.json" -Loops 2
+```
 You can string together multiple configurations by calling configRunner.ps1 multiple times in a script or command line sequence.
 
-3. drawDraggableBoxes.ps1
+### 3. drawDraggableBoxes.ps1
 
 Used to view and adjust click positions in a configuration file.
 
@@ -40,36 +41,36 @@ After adjusting, you can update the click coordinates in the JSON file.
 This ensures accuracy and allows fine-tuning of click positions without manually editing the file.
 
 Example usage:
-
+```powershell
 .\drawDraggableBoxes.ps1 -ConfigFile "MyClicks.json"
-
+```
 
 After positioning the boxes, closing the window will save any changes automatically.
-
-Workflow Example
+---
+### Workflow Example
 
 Create a configuration
-
+```powershell
 .\configCreator.ps1
 # Follow prompts to define click coordinates
-
+```
 
 Adjust or verify positions (optional)
-
+```powershell
 .\drawDraggableBoxes.ps1 -ConfigFile "MyClicks.json"
-
+```
 
 Run the clicks
-
+```powershell
 .\configRunner.ps1 -ConfigFile "MyClicks.json" -Loops 5
-
+```
 
 Chain multiple configurations
-
+```powershell
 .\configRunner.ps1 -ConfigFile "FirstAction.json" -Loops 2
 .\configRunner.ps1 -ConfigFile "SecondAction.json" -Loops 3
-
-Notes
+```
+### Notes
 
 You only need to create a configuration file once for each unique action.
 
